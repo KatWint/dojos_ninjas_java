@@ -18,7 +18,15 @@
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<c:out value="${allNinjas.firstName}"></c:out>
+<h1><c:out value="${dojo.name}"/></h1>
+	
+	<ul>
+	<c:forEach var="ninja" items="${dojo.ninjas}">
+	
+		<li><c:out value="${ninja.firstName}"/> <c:out value="${ninja.lastName}"/></li>
+	
+	</c:forEach>
+	</ul>
    
 </body>
 </html>

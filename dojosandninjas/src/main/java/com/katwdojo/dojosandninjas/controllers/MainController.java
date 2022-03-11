@@ -66,8 +66,8 @@ public class MainController {
 	}
 	
 	@GetMapping("/dojoshow/{id}")
-		public String showNinjas(@PathVariable Long id, Model allNinjas) {
-			allNinjas.addAttribute("allNinjas", ninjaService.allNinjas());
+		public String showNinjas(@PathVariable Long id, Model viewDojo) {
+			viewDojo.addAttribute("dojo", this.dojoService.findDojo(id));
 			return "dojoshow.jsp";
 	}
 	
